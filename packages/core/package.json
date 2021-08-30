@@ -1,0 +1,12 @@
+{
+  "name": "@fast-admin/core",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "Aditya Agarwal",
+  "license": "MIT",
+  "dependencies": {
+    "history": "5",
+    "react-router": "^6.0.0-beta.2",
+    "react-router-dom": "^6.0.0-beta.2"
+  }
+}

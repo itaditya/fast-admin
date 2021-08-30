@@ -1,0 +1,11 @@
+{
+  "name": "fast-admin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Aditya Agarwal",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "./packages/*"
+  ]
+}
