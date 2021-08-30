@@ -1,5 +1,5 @@
-import React, { Suspense, useMemo, lazy, createElement } from 'react';
-import { BrowserRouter, Link, useRoutes } from 'react-router-dom';
+import { useMemo, lazy, createElement } from 'react';
+import { Link, useRoutes } from 'react-router-dom';
 
 const pageModules = import.meta.glob('/src/pages/*.jsx');
 
@@ -32,26 +32,11 @@ function getRoutesFromModules() {
   return routes;
 }
 
-function FileRouting() {
+export function Routes() {
   const routes = useMemo(getRoutesFromModules, []);
   const element = useRoutes(routes);
 
   return element;
-}
-
-export function Routes(props) {
-  const { children } = props;
-
-  return (
-    <div>
-      <Suspense fallback={<div>Loading....</div>}>
-        <BrowserRouter>
-          {children}
-          <FileRouting />
-        </BrowserRouter>
-      </Suspense>
-    </div>
-  );
 }
 
 export { Link };
