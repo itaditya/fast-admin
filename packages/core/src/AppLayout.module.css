@@ -2,7 +2,7 @@
   --navbar-height: 60px;
 
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: minmax(250px, auto) 1fr;
   grid-template-rows: var(--navbar-height) 1fr;
   grid-template-areas:
     'navbar navbar'

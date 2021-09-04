@@ -1,4 +1,5 @@
 export const routeConfig = {
+  title: 'Billing',
   actions: [
     {
       title: 'Customer Bills',

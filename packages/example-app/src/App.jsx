@@ -1,5 +1,5 @@
 import React from 'react';
-import { Setup, Styles, AppLayout, Routes, Link } from '@fast-admin/core';
+import { Setup, Styles, AppLayout, Routes } from '@fast-admin/core';
 
 import './App.css';
 
@@ -9,8 +9,6 @@ function App() {
       <Setup>
         <Styles />
         <AppLayout>
-          <Link to="/billing">Billing</Link>
-          <Link to="/users">Users</Link>
           <Routes />
         </AppLayout>
       </Setup>

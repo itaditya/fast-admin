@@ -16,6 +16,16 @@
   overscroll-behavior: contain;
 }
 
+.sectionTitle {
+  margin: 0;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .navlinkList {
   /* height: 200vh; */
 
@@ -25,11 +35,23 @@
 }
 
 .navLink {
+  display: block;
   padding: 10px 20px;
+  text-decoration: none;
+  color: #000;
+  font-size: 0.95rem;
+}
+
+.navLink:not(.activeNavLink):hover {
+  background-color: hsl(0 0% 97.3%);
+}
+
+.activeNavLink {
+  background-color: hsl(224 87.1% 92.0%);
 }
 
 .pinnedLinkContainer {
-  background-color: lightblue;
+  background-color: hsl(0 0% 97.3%);
 }
 
 .actionsContainer {
