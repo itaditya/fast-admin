@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'clsx';
 import thinScrollClasses from './style-utils/thinScroll.module.css';
 import classes from './Sidebar.module.css';
 
@@ -7,7 +8,7 @@ export function Sidebar(props) {
 
   return (
     <aside className={classes.sidebar}>
-      <nav className={`${classes.navlinkContainer} ${thinScrollClasses.scrollBar}`}>
+      <nav className={cx(classes.navlinkContainer, thinScrollClasses.scrollBar)}>
         <ul className={classes.navlinkList}>
           <li className={classes.navLink}>Lorem ipsum dolor sit amet</li>
           <li className={classes.navLink}>Lorem ipsum dolor sit</li>

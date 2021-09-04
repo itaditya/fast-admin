@@ -1,5 +1,5 @@
 .appLayout {
-  --navbar-height: 65px;
+  --navbar-height: 60px;
 
   display: grid;
   grid-template-columns: auto 1fr;
