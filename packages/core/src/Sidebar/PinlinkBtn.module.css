@@ -1,4 +1,10 @@
 .pinlinkBtn {
-  width: 20px;
-  height: 20px;
+  appearance: none;
+  border: none;
+  background-color: hsl(223 98.4% 97.1%);
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  margin: 0;
+  font-size: 1rem;
 }

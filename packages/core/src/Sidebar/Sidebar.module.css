@@ -1,10 +1,14 @@
 .sidebar {
+  --fad-link-hover-bg-color: hsl(0 0% 97.3%);
+  --fad-link-active-bg-color: hsl(224 87.1% 92.0%);
+
   position: sticky;
   top: var(--navbar-height);
 
   grid-area: sidebar;
   display: flex;
   flex-direction: column;
+  gap: 10px;
   height: calc(100vh - var(--navbar-height));
 
   border-right: 1px solid rgb(218, 221, 225);
@@ -19,42 +23,43 @@
 .sectionTitle {
   margin: 0;
   padding-left: 10px;
-  padding-top: 20px;
+  padding-top: 15px;
   padding-bottom: 10px;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.navlinkList {
-  /* height: 200vh; */
-
+.navlinkList, .pinlinkList {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.navlinkItem {
+.navlinkItem, .pinlinkItem {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.navLink {
+.navLink, .pinlink {
+  --fad-navlink-bg-color: transparent;
+
   display: block;
   flex: 1;
   padding: 10px 20px;
   text-decoration: none;
+  background-color: var(--fad-navlink-bg-color);
   color: #000;
   font-size: 0.95rem;
 }
 
 .navlinkItem:hover .navLink:not(.activeNavLink) {
-  background-color: hsl(0 0% 97.3%);
+  --fad-navlink-bg-color: var(--fad-link-hover-bg-color);
 }
 
 .activeNavLink {
-  background-color: hsl(224 87.1% 92.0%);
+  --fad-navlink-bg-color: var(--fad-link-active-bg-color);
 }
 
 .pinlinkBtn {
@@ -64,13 +69,29 @@
 }
 
 .navlinkItem:hover .pinlinkBtn {
-  display: block;
+  display: inherit;
 }
 
 .pinnedLinkContainer {
-  background-color: hsl(0 0% 97.3%);
+}
+
+.pinlinkItem:hover .pinlink {
+  --fad-navlink-bg-color: var(--fad-link-hover-bg-color);
+}
+
+.pinlinkItem:hover .pinlinkBtn {
+  display: inherit;
+}
+
+.emptyPinnedLinks {
+  margin: 0;
+  padding-top: 5px;
+  padding-left: 20px;
+  color: hsl(206 98.8% 5.9% / 0.467);
 }
 
 .actionsContainer {
   padding: 10px 15px;
+  background-color: hsl(216 91.1% 10.9% / 0.099);
+  color: hsl(202 97.0% 2.4% / 0.934);
 }
