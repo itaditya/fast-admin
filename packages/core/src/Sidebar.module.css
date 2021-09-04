@@ -17,6 +17,8 @@
 }
 
 .navlinkList {
+  /* height: 200vh; */
+
   list-style: none;
   margin: 0;
   padding: 0;
