@@ -34,20 +34,37 @@
   padding: 0;
 }
 
+.navlinkItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .navLink {
   display: block;
+  flex: 1;
   padding: 10px 20px;
   text-decoration: none;
   color: #000;
   font-size: 0.95rem;
 }
 
-.navLink:not(.activeNavLink):hover {
+.navlinkItem:hover .navLink:not(.activeNavLink) {
   background-color: hsl(0 0% 97.3%);
 }
 
 .activeNavLink {
   background-color: hsl(224 87.1% 92.0%);
+}
+
+.pinlinkBtn {
+  position: absolute;
+  right: 10px;
+  display: none;
+}
+
+.navlinkItem:hover .pinlinkBtn {
+  display: block;
 }
 
 .pinnedLinkContainer {

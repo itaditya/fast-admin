@@ -1,14 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import cx from 'clsx';
-import { getNavlinks } from './routing/getNavlinks';
-import thinScrollCl from './style-utils/thinScroll.module.css';
+import { PinlinkBtn } from './PinlinkBtn';
+import { getNavlinks } from '../routing/getNavlinks';
+import { usePinnedLinksStore } from '../store/pinnedLinks';
+import thinScrollCl from '../style-utils/thinScroll.module.css';
 import cl from './Sidebar.module.css';
 
 const navlinks = getNavlinks();
 
 export function Sidebar(props) {
   const { children } = props;
+  const { pinnedLinks } = usePinnedLinksStore();
 
   return (
     <aside className={cl.sidebar}>
@@ -16,11 +19,14 @@ export function Sidebar(props) {
         <h3 className={cl.sectionTitle}>Pages</h3>
         <ul className={cl.navlinkList}>
           {navlinks.map((navlink) => {
+            const { to, title } = navlink;
+
             return (
-              <li key={navlink.to}>
-                <NavLink to={navlink.to} className={cl.navLink} activeClassName={cl.activeNavLink}>
-                  {navlink.title}
+              <li key={to} className={cl.navlinkItem}>
+                <NavLink to={to} className={cl.navLink} activeClassName={cl.activeNavLink}>
+                  {title}
                 </NavLink>
+                <PinlinkBtn className={cl.pinlinkBtn} link={to} />
               </li>
             );
           })}
@@ -28,8 +34,13 @@ export function Sidebar(props) {
       </nav>
       <div className={cl.pinnedLinkContainer}>
         <h3 className={cl.sectionTitle}>Pinned Pages</h3>
-        <p>Item 1</p>
-        <p>Item 2</p>
+        {
+          pinnedLinks.map(link => {
+            return (
+              <p key={link}>Item - {link}</p>
+            );
+          })
+        }
       </div>
       <div className={cl.actionsContainer}>
         <div>{children}</div>
