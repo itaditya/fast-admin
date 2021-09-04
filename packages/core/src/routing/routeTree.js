@@ -3,16 +3,12 @@ import { getPageModules, getMetaModules } from './getRouteModules';
 const pageModules = getPageModules();
 const metaModules = getMetaModules();
 
+const pathRx = new RegExp('src/routes(.*?).page.jsx');
+
 function convertPathToRoute(path) {
-  if (path.includes('billing')) {
-    return '/billing';
-  }
+  const route = pathRx.exec(path)[1];
 
-  if (path.includes('users')) {
-    return '/users';
-  }
-
-  return '/';
+  return route;
 }
 
 function getMetaKey(pageKey) {
