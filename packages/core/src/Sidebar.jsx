@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import cx from 'clsx';
-import { getSidebarItems } from './routing/getSidebarItems';
+import { getNavlinks } from './routing/getNavlinks';
 import thinScrollCl from './style-utils/thinScroll.module.css';
 import cl from './Sidebar.module.css';
 
-const { navlinks } = getSidebarItems();
+const navlinks = getNavlinks();
 
 export function Sidebar(props) {
   const { children } = props;

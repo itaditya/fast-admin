@@ -7,7 +7,7 @@ function getTitle(route) {
   return title || defaultTitle;
 }
 
-function getNavlinks() {
+export function getNavlinks() {
   const routes = Object.values(routeTree);
   const navlinks = routes.map((route) => {
     return {
@@ -17,12 +17,4 @@ function getNavlinks() {
   });
 
   return navlinks;
-}
-
-export function getSidebarItems() {
-  const navlinks = getNavlinks();
-
-  return {
-    navlinks,
-  }
 }
