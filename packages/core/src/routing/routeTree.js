@@ -12,7 +12,7 @@ function convertPathToRoute(path) {
 }
 
 function getMetaKey(pageKey) {
-  const path = pageKey.replace('.page.jsx', '.meta.jsx');
+  const path = pageKey.replace('.page.jsx', '.meta.js');
 
   return path;
 }

@@ -1,5 +1,5 @@
 const pageModules = import.meta.glob('/src/routes/**/*.page.jsx');
-const metaModules = import.meta.globEager('/src/routes/**/*.meta.jsx');
+const metaModules = import.meta.globEager('/src/routes/**/*.meta.js');
 
 export function getPageModules() {
   return pageModules;
