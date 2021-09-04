@@ -1,0 +1,25 @@
+.scrollBar {
+  --fad-scrollbar-size: 7px;
+  --fad-scrollbar-track-bg-color: #f1f1f1;
+  --fad-scrollbar-thumb-bg-color: silver;
+  --fad-scrollbar-thumb-hover-bg-color: #a7a7a7;
+}
+
+.scrollBar::-webkit-scrollbar {
+  height: var(--fad-scrollbar-size);
+  width: var(--fad-scrollbar-size);
+}
+
+.scrollBar::-webkit-scrollbar-track {
+  background: var(--fad-scrollbar-track-bg-color);
+  border-radius: 10px;
+}
+
+.scrollBar::-webkit-scrollbar-thumb {
+  background: var(--fad-scrollbar-thumb-bg-color);
+  border-radius: 10px;
+}
+
+.scrollBar::-webkit-scrollbar-thumb:hover {
+  background: var(--fad-scrollbar-thumb-hover-bg-color);
+}

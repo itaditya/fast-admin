@@ -1,0 +1,21 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  
+  grid-area: navbar;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 30px;
+
+  background-color: #fff;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.logoContainer, .quickActionContainer, .actionsContainer {
+  align-self: center;
+}
+
+.navlinkContainer {
+  background-color: #ddd;
+}

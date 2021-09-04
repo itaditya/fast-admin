@@ -5,7 +5,7 @@ export function Setup(props) {
   const { children } = props;
 
   return (
-    <Suspense fallback={<div>Loading....</div>}>
+    <Suspense fallback={<div>Application Loading....</div>}>
       <BrowserRouter>{children}</BrowserRouter>
     </Suspense>
   );
