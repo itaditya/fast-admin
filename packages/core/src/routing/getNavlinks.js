@@ -1,11 +1,5 @@
 import { routeTree } from './routeTree';
-
-function getTitle(route) {
-  const title = route.meta?.routeConfig?.title;
-  const defaultTitle = `To ${route.route}`;
-
-  return title || defaultTitle;
-}
+import { getTitle } from './getTitle';
 
 export function getNavlinks() {
   const routes = Object.values(routeTree);
