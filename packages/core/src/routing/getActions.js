@@ -9,7 +9,7 @@ export function getActions() {
   routes.forEach((route) => {
     const routeConfig = route.meta?.routeConfig || {};
     const pageTitle = getTitle(route);
-    const pageDescription = routeConfig.descriptions || '';
+    const pageDescription = routeConfig.descriptions;
 
     const pageAction = {
       title: pageTitle,

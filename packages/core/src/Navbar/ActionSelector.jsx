@@ -10,7 +10,6 @@ const allActionsList = getActions();
 const options = {
   includeScore: true,
   includeMatches: true,
-  minMatchCharLength: 2,
   threshold: 0.4,
   keys: [
     {
@@ -30,29 +29,48 @@ function InternalActionSelector() {
   const [text, setText] = useState('');
   const results = fuse.search(text);
 
+  const hasNoResults = results.length === 0;
+  const showStartingContent = text.length === 0 && hasNoResults;
+  const showNoResultMessage = text.length > 0 && hasNoResults;
+
   function handleChange(event) {
     setText(event.target.value);
   }
 
   return (
     <div>
-      <Root>
+      <Root defaultOpen={true}>
         <Trigger>Find Action (CMD + K)</Trigger>
         <Overlay className={cl.dialogOverlay} />
         <Content className={cl.dialogContent}>
           <ActionInput value={text} onChange={handleChange} />
-          <ul>
+          <ul className={cl.resultsList}>
             {results.map(({ item }) => {
               return (
-                <li key={item.title}>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
+                <li key={item.title} className={cl.resultItem}>
+                  <h4 className={cl.resultTitle}>{item.title}</h4>
+                  <p className={cl.resultDescription}>
+                    {item.description || 'Description not provided'}
+                  </p>
                 </li>
               );
             })}
           </ul>
-          <Title>Find an action</Title>
-          <Description>Start typing in the input field</Description>
+          {showNoResultMessage && <p>No results found for what you searched for</p>}
+          {showStartingContent && (
+            <div>
+              <section className={cl.helpSection}>
+                <Title className={cl.helpTitle}>Find an action</Title>
+                <Description className={cl.helpDescription}>
+                  Search for different actions in the above field. Selecting it will take you to the
+                  relevant page quickly. You can even logout directly from here.
+                </Description>
+              </section>
+              <section className={cl.recentSection}>
+                <h3 className={cl.recentTitle}>Recently Used Actions</h3>
+              </section>
+            </div>
+          )}
         </Content>
       </Root>
     </div>
