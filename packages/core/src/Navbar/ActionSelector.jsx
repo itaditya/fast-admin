@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Fuse from 'fuse.js';
 import { Root, Trigger, Overlay, Content, Title, Description, Close } from '@radix-ui/react-dialog';
-import { Cross1Icon } from '@radix-ui/react-icons';
+import { ActionInput } from './ActionInput';
 import { getActions } from '../routing/getActions';
 import cl from './ActionSelector.module.css';
 
@@ -40,7 +40,7 @@ function InternalActionSelector() {
         <Trigger>Find Action (CMD + K)</Trigger>
         <Overlay className={cl.dialogOverlay} />
         <Content className={cl.dialogContent}>
-          <input type="text" value={text} onChange={handleChange} />
+          <ActionInput value={text} onChange={handleChange} />
           <ul>
             {results.map(({ item }) => {
               return (
@@ -53,9 +53,6 @@ function InternalActionSelector() {
           </ul>
           <Title>Find an action</Title>
           <Description>Start typing in the input field</Description>
-          <Close>
-            <Cross1Icon />
-          </Close>
         </Content>
       </Root>
     </div>

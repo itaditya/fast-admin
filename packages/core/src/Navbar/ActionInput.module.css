@@ -1,0 +1,35 @@
+.label {
+  --fad-action-input-border-color:hsl(0 0% 0% / 0.090);
+
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--fad-action-input-border-color);
+}
+
+.label:focus-within {
+  --fad-action-input-border-color: hsl(225 77.4% 82.1%);
+}
+
+.searchIcon {
+  font-size: 1.5rem;
+}
+
+.input {
+  border: none;
+  outline: 0;
+  flex: 1;
+  font-size: 1.3rem;
+  margin-left: 5px;
+}
+
+.closeBtn {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  margin: 0;
+  font-size: 1.2rem;
+}
