@@ -44,18 +44,20 @@ function InternalActionSelector() {
         <Overlay className={cl.dialogOverlay} />
         <Content className={cl.dialogContent}>
           <ActionInput value={text} onChange={handleChange} />
-          <ul className={cl.resultsList}>
-            {results.map(({ item }) => {
-              return (
-                <li key={item.title} className={cl.resultItem}>
-                  <h4 className={cl.resultTitle}>{item.title}</h4>
-                  <p className={cl.resultDescription}>
-                    {item.description || 'Description not provided'}
-                  </p>
-                </li>
-              );
-            })}
-          </ul>
+          {!hasNoResults && (
+            <ul className={cl.resultsList}>
+              {results.map(({ item }) => {
+                return (
+                  <li key={item.title} className={cl.resultItem}>
+                    <h4 className={cl.resultTitle}>{item.title}</h4>
+                    <p className={cl.resultDescription}>
+                      {item.description || 'Description not provided'}
+                    </p>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
           {showNoResultMessage && <p>No results found for what you searched for</p>}
           {showStartingContent && (
             <div>
